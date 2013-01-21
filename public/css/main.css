@@ -1,0 +1,19 @@
+* { margin: 0px; padding: 0px; }
+li { list-style: none; }
+body { font-family: Verdana; background-color: #FFF; }
+h1 { margin-bottom: 10px; color: #254F6F ;}
+p { margin-bottom: 10px; }
+hr { margin: 20px; }
+
+/* blue: #254F6F || dark green: #98C0A8 || light green: #D2DEC8  */
+
+#content { width: 70%; margin: 10px auto; background-color: #D2DEC8; padding: 10px; border: 3px solid #98C0A8; }
+#results { margin: 10px; border: 1px solid #98C0A8; background-color: #FFF; }
+#replicateButton { cursor: pointer; text-align: center; padding: 10px;}
+
+form label {cursor: pointer; display: block; font-weight: bold; margin-bottom: 10px;}
+textarea#document { width: 80%; height: 300px; margin-left: 10%; }
+
+div.tweet { border: 1px solid black; padding: 10px; margin: 10px; height: 30px; }
+div.tweet div.text { float: left; font-size: 12px; width: 80%; padding-right: 10px; }
+div.tweet a.link { font-size: .8em; display: block; float: right;}
