@@ -11,6 +11,7 @@ hr { margin: 20px; }
 #content { width: 70%; margin: 10px auto; background-color: #D2DEC8; padding: 10px; border: 3px solid #98C0A8; }
 #results { margin: 10px; border: 1px solid #98C0A8; background-color: #FFF; }
 #replicateButton { cursor: pointer; text-align: center; padding: 10px;}
+#attribution { text-align: center; margin: 10px; margin-top: 50px; font-size: .8em; }
 
 form label { cursor: pointer; display: block; font-weight: bold; margin-bottom: 10px; }
 form input { margin-left: 10%; }

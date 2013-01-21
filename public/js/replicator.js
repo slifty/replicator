@@ -135,18 +135,29 @@
 
             var $details2 = $("<p />")
                 .html("<strong>Second:</strong> Pick a sentence or two to replicate.")
-                .appendTo($instructions);
+                .appendTo($instructions)
 
             var $details3 = $("<p />")
+                .html("<strong>Third:</strong> Watch your ")
+                .appendTo($instructions);
+
+            var $viewLink = $("<a />")
+                .addClass("link")
+                .attr("target", "_blank")
+                .attr("href", "http://collector.istheinternetabigtruck.com/?cd=" + base.identifier)
+                .text("collective document grow.")
+                .appendTo($details3);
+
+            var $details4 = $("<p />")
                 .html("A link to this recipe: ")
                 .appendTo($instructions);
 
-            var $helpLink = $("<a />")
+            var $shareLink = $("<a />")
                 .addClass("link")
                 .attr("target", "_blank")
                 .attr("href", window.location.href.split('?')[0] + "?cd=" + base.identifier)
                 .text(window.location.href.split('?')[0] + "?cd=" + base.identifier)
-                .appendTo($details3);
+                .appendTo($details4);
 
                 
 

@@ -54,5 +54,6 @@
 				</div>
 			</form>
 		</div>
+		<div id="attribution">This was built by <a href="http://slifty.com">Dan Schultz</a> (<a href="http://www.twitter.com/slifty">@slifty</a>) and Paul Schultz (<a href="https://twitter.com/paulwschultz">@paulwschultz</a>).  The code is <a href="https://github.com/slifty/replicator">on Github.</a></div>
 	</body>
 </html>
