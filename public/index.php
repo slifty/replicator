@@ -1,7 +1,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-		<title>The Collector</title>
+		<title>The Replicator</title>
 		<link rel="stylesheet" href="css/main.css"></style>
 		<script src="js/lib/jquery-1.9.0.min.js"></script>
 		<script src="js/replicator.js"></script>
