@@ -129,7 +129,7 @@
             var $helpLink = $("<a />")
                 .addClass("link")
                 .attr("target", "_blank")
-                .attr("href", "https://twitter.com/share?text=" + encodeURIComponent("I want to build a collective document and need your help: " + window.location.href.split('?')[0] + "?cd=" + base.identifier))
+                .attr("href", "https://twitter.com/share?text=" + encodeURIComponent("I want to build a collective document and need your help: ") + "&url=" + encodeURIComponent(window.location.href.split('?')[0] + "?cd=" + base.identifier))
                 .text("help you create this collective document.")
                 .appendTo($details1);
 
