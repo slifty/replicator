@@ -1,7 +1,8 @@
 * { margin: 0px; padding: 0px; }
 li { list-style: none; }
 body { font-family: Verdana; background-color: #FFF; }
-h1 { margin-bottom: 10px; color: #254F6F ;}
+h1 { font-size: 2em; margin-bottom: 10px; color: #254F6F ;}
+h2 { font-size: 1.4em; margin-bottom: 10px;}
 p { margin-bottom: 10px; }
 hr { margin: 20px; }
 
@@ -14,6 +15,9 @@ hr { margin: 20px; }
 form label { cursor: pointer; display: block; font-weight: bold; margin-bottom: 10px; }
 form input { margin-left: 10%; }
 textarea#document { width: 80%; height: 300px; margin-left: 10%; }
+
+div.instructions { margin: 10px; padding: 10px; border: 2px solid #EDA659; background-color: #FFD98C;}
+div.instructions p { font-size: .9em; }
 
 div.tweet { border: 1px solid black; padding: 10px; margin: 10px; height: 30px; }
 div.tweet div.text { float: left; font-size: 12px; width: 80%; padding-right: 10px; }

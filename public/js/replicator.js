@@ -86,7 +86,6 @@
                     checksum += int_to_ascii(messages.length,2);
                     checksum += int_to_ascii(i, 2);
                     message_checksums.push(checksum);
-                    console.log(checksum);
                 }
                 return message_checksums
             }
@@ -104,10 +103,37 @@
         base.render = function() {
             base.$el.empty();
 
+            var $instructions = $("<div />")
+                .addClass("instructions")
+                .appendTo(base.$el);
+
+            var $headline = $("<h2 />")
+                .text("Recipe Generated: Now What?")
+                .appendTo($instructions);
+
+            var $details1 = $("<p />")
+                .html("<strong>First:</strong> Ask everyone you know to ")
+                .appendTo($instructions);
+
+            var $helpLink = $("<a />")
+                .addClass("link")
+                .attr("target", "_blank")
+                .attr("href", "https://twitter.com/share?text=" + encodeURIComponent("I want to build a collective document and need your help: " + window.location.href.split('?')[0] + "?cd=" + base.identifier))
+                .text("help you create this collective document.")
+                .appendTo($details1);
+
+            var $details2 = $("<p />")
+                .html("<strong>Second:</strong> Pick a sentence or two to replicate.")
+                .appendTo($instructions);
+
+            var $tweets = $("<div />")
+                .addClass("tweets")
+                .appendTo(base.$el);
+
             for(var x in base.tweets) {
                 var $container = $("<div />")
                     .addClass("tweet")
-                    .appendTo(base.$el);
+                    .appendTo($tweets);
 
                 var $text = $("<div />")
                     .addClass("text")

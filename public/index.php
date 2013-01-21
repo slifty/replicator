@@ -9,6 +9,7 @@
 			$(function() {
 				$("#replicateButton").click(function() {
 					$("#results").replicator($("#document").val());
+					$("#questions").hide();
 				});
 			});
 		</script>
@@ -24,7 +25,7 @@
 			<p>You can render collective documents anywhere on the open web using <a href="">this code</a>.  If you don't feel like setting it up yourself you can just visit <a href="">The Collector</a>.</p>
 			<hr />
 			<form>
-				<ul>
+				<ul id="questions">
 					<li>
 						<label for="document">Your Document's Text</label>
 						<textarea id="document"></textarea>
