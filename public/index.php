@@ -9,7 +9,7 @@
 				$("#replicateButton").click(function() {
 					$("#results").replicator($("#document").val());
 				});
-			})
+			});
 		</script>
 	</head>
 

@@ -1,4 +1,10 @@
 (function($) {
+    var CHAR_MAP = ['!','"','$','%','&','\'','(',')','*','+',',','-','.','/','0','1','2','3','4','5','6','7','8','9',':',';','<','=','>','?','@','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','[','\\',']','^','_','`','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','{','|','}','~','¡','¢','£','¤','¥','¦','§','¨','©','ª','«','¬','­','®','¯','°','±','²','³','´','µ','¶','·','¸','¹','º','»','¼','½','¾','¿','À','Á','Â','Ã','Ä','Å','Æ','Ç','È','É','Ê','Ë','Ì','Í','Î','Ï','Ð','Ñ','Ò','Ó','Ô','Õ','Ö','×','Ø','Ù','Ú','Û','Ü','Ý','Þ','ß','à','á','â','ã','ä','å','æ','ç','è','é','ê','ë','ì','í','î','ï','ð','ñ','ò','ó','ô','õ','ö','÷','ø','ù','ú','û','ü','ý','þ']; 
+    var ID_CHAR_MAP = ['0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']; 
+    var int_to_ascii = function(x) {
+        return CHAR_MAP[x];
+    }
+
     $.replicator = function(el, text, options){
         var base = this;
 
@@ -17,7 +23,9 @@
 
             base.text = text;
 
-            base.identifier = "ident";
+            base.identifier = 'CD_';
+            for(var x = 0; x < 7; ++x)
+                base.identifier += ID_CHAR_MAP[Math.floor(Math.random() * ID_CHAR_MAP.length)];
 
             base.options = $.extend({},$.replicator.defaultOptions, options);
 
@@ -62,22 +70,19 @@
 
                         total = (total * ch.charCodeAt(0)) % 61
                     }
-                    mod_checksums.push(total + " ");
+                    mod_checksums.push(total);
                 }
                 var message_checksums = [];
                 for(var i in mod_checksums) {
                     var checksum = "";
-                    checksum += base.options.checksum_type + " ";
-                    checksum += mod_checksums[(i==0?mod_checksums.length:i)-1];
-                    checksum += mod_checksums[((i==mod_checksums.length-1?-1:i)+1) % mod_checksums.length];
-                    checksum += messages.length + " ";
-                    checksum += i;
+                    checksum += int_to_ascii(base.options.checksum_type);
+                    checksum += int_to_ascii(mod_checksums[(i==0?mod_checksums.length:i)-1]);
+                    checksum += int_to_ascii(mod_checksums[((i==mod_checksums.length-1?-1:i)+1) % mod_checksums.length]);
+                    checksum += int_to_ascii(messages.length);
+                    checksum += int_to_ascii(i);
                     message_checksums.push(checksum);
                 }
                 return message_checksums
-            }
-            var int_to_ascii = function(n) {
-                return n;
             }
 
             var messages = parse_into_messages(text);
@@ -120,6 +125,7 @@
 
     $.replicator.defaultOptions = {
         break_chars: ".?!",
+        document_id: '',
         min_size: 40,
         max_size: 110,
         cutoff_threshold: 15,
